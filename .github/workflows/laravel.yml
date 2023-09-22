@@ -10,7 +10,7 @@ on:
     branches: [ "main",  "develop", "release/*" ]
 
 jobs:
-  laravel-tests:
+  PHPUnit:
     runs-on: ubuntu-latest
     services:
       mysql:
