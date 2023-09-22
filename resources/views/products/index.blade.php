@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Products') }}
         </h2>
     </x-slot>
 
@@ -22,9 +22,17 @@
                         </thead>
                         <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-600 divide-solid">
                             @forelse($products as $product)
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm leading-5 text-gray-900 dark:text-gray-100">
+                                        {{ $product->name }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm leading-5 text-gray-900 dark:text-gray-100">
+                                        {{ $product->price }}
+                                    </td>
+                                </tr>
                                 @empty
-                                <tr>
-                                    <td colspan="2" class="px-6 py-4 whitespace-nowrap text-sm leading-5 text-gray-900 dark:text-gray-200">
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td colspan="2" class="px-6 py-4 whitespace-nowrap text-sm leading-5 text-gray-900 dark:text-gray-100">
                                         {{ __('No products found') }}
                                     </td>
                                 </tr>

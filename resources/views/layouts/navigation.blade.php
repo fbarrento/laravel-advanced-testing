@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex flex-grow">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
@@ -10,12 +10,31 @@
                     </a>
                 </div>
 
-                @auth()
+                @auth
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
+                    </div>
+                    @else
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow justify-between">
+
+                        <x-nav-link :href="route('products')" :active="request()->routeIs('products')">
+                            {{ __('Products') }}
+                        </x-nav-link>
+
+                        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="{{ route('login') }}" >
+                                Log in
+                            </x-nav-link>
+
+                            @if (Route::has('register'))
+                                <x-nav-link href="{{ route('register') }}">
+                                    Register
+                                </x-nav-link>
+                            @endif
+                        </div>
                     </div>
                 @endauth
             </div>
@@ -54,12 +73,6 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-            @elseauth()
-                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                @endif
             @endauth
 
             <!-- Hamburger -->
