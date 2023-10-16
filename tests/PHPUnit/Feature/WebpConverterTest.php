@@ -1,9 +1,7 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\PHPUnit\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
@@ -25,7 +23,7 @@ class WebpConverterTest extends TestCase
         $response = $this->get('/webp-converter');
 
         $response->assertOk();
-        $response->assertSee('<h1>to WEBP Converter</h1>', false);
+        $response->assertSee('<h1 class="text-3xl font-bold">WEBP Converter</h1>', false);
     }
 
     public function test_webp_converter_page_has_a_drop_zone(): void

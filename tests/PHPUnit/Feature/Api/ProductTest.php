@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\PHPUnit\Feature\Api;
 
 use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 use Tests\Traits\WithUserAndAdmin;

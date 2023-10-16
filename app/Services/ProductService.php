@@ -14,7 +14,7 @@ class ProductService
             return Product::create([
                 'name' => $attributes['name'],
                 'price' => $attributes['price'],
-                'description' => $attributes['description']
+                'description' => $attributes['description'] ?? ""
             ]);
         });
     }

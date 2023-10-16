@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\PHPUnit\Unit;
 
 use App\Services\OpenAIService;
 use Tests\TestCase;

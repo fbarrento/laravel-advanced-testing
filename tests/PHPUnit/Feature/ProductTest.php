@@ -1,13 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\PHPUnit\Feature;
 
 use App\Models\Product;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Tests\Traits\WithUserAndAdmin;
 
