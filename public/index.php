@@ -3,6 +3,10 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+ini_set('post_max_size', '10G');
+ini_set('upload_max_filesize', '10G');
+ini_set('max_execution_time', 3600);
+
 define('LARAVEL_START', microtime(true));
 
 /*
