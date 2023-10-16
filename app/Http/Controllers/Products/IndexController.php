@@ -12,7 +12,7 @@ class IndexController extends Controller
 
     public function __invoke(): View
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
 
         return view('products.index', [
             'products' => $products
