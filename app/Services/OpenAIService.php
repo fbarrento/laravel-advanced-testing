@@ -10,12 +10,13 @@ class OpenAIService
 
 
 
-    public function sendMessage(string $message): mixed
+    public function sendMessage(string $message): string
     {
 
         $key = env('OPENAI_API_KEY');
         $organization = env('OPENAI_API_ORGANIZATION');
-        return $this->getResponse($message, $key, $organization)->json();
+        $response =  $this->getResponse($message, $key, $organization)->json();
+        return $response['choices'][0]['message']['content'];
 
     }
 
